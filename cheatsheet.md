@@ -36,7 +36,7 @@ _retrun:
     MOV R0, R1
     MOV R0, #255     @can only assign 8 bits = 255
 
-    LDR R0, =1000    @creater numbers assign via LDR
+    LDR R0, =1000    @greater numbers as 255 assign via LDR
 ```
 
 ### Mathematic working:
