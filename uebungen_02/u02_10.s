@@ -18,13 +18,10 @@ _exit:
 	SWI 0
 
 /*  
-
 Das Ergebnis lautet: 188
 
 Erkenntnis 1: Durch Ausgabe des Stackwertes durch das laden von SP/R13 in R0 bekommt man den obersten Wert des Stacks d.h. die verwendete Strategie 
               ist ein Full Stack.
-Erkenntnis 2: Die Frage ist, ob ein Full Ascending oder ein Full Descending verwendet wird. Auf die Lösung dieser Frage kommt man durch debuggen.
+Erkenntnis 2: Die Frage ist, ob ein Full Ascending oder ein Full Descending verwendet wird. Auf die Loesung dieser Frage kommt man durch debuggen.
               Dadurch, dass die Adresse des Stackpointer immer kleiner wird erkennt man das die verwendete Strategie: Full Descending ist.
-              
-
 */

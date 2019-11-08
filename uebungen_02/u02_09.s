@@ -10,14 +10,11 @@ _exit:
 	SWI 0
 
 /*  
-
-Berechnung von 1c vom vorherigen Übungsblatt: 333-222=111
+Berechnung von 1c vom vorherigen uebungsblatt: 333-222=111
 
 Zahlen der Aufgabe 1c werden mit den Werten aus 1d ersetzt.
-Nach dem ersten ausführen lautet das Ergebnis: 145 
+Nach dem ersten ausfuehren lautet das Ergebnis: 145 
 
-Manuelle Berechnung von 222-333 = -111 (Binär: 1001 0001)
+Manuelle Berechnung von 222-333 = -111 (Binaer: 1001 0001)
 Durch die Umwandlung des Ergebnisses (145) durch das 2er Komplement wird es zu -111
-
-
 */

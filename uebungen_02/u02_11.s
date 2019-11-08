@@ -12,7 +12,7 @@ _exit:
 
 /*  
 
-Bei Debuggen erhöht sich Stack Pointer Adresse. (ascending)
+Bei Debuggen erhoeht sich Stack Pointer Adresse. (ascending)
 Aktueller Stackpointer zeigt in eine Unbeschriebene Adresse. (empty)
 Stack Strategie: Empty Ascending 
 

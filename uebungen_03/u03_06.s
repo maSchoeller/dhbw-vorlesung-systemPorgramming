@@ -2,10 +2,10 @@
 _start:
 
 	MOVW R0, #821	@Dividend
-	MOV R1, #11	@Divisor
-	MOV  R2,#0	@Verschieben
-	MOV R3,R0	@Rest der Division
-	MOV R4,#0	@Ergebnis
+	MOV R1, #11		@Divisor
+	MOV  R2,#0		@Verschieben
+	MOV R3,R0		@Rest der Division
+	MOV R4,#0		@Ergebnis
 	MOV R5,#0		@holende Zahl
 
 

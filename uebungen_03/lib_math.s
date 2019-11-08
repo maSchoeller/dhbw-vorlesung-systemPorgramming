@@ -1,25 +1,25 @@
 
 
 /********************************************************************************/
-/*  library: 		lib_math.s						*/
-/*  description:	Contains functions for multiplikattion and division	*/
-/*			function mult_ro_mit_r1: muliply two numbers		*/
-/*			function div_r0_durch_r1: divide ro to r1		*/	
-/*depends on:		---							*/
+/*  library: 		lib_math.s													*/
+/*  description:	Contains functions for multiplikattion and division			*/
+/*					function mult_ro_mit_r1: muliply two numbers				*/
+/*					function div_r0_durch_r1: divide ro to r1					*/	
+/*	depends on:		---															*/
 /********************************************************************************/
-
 	.global mult_r0_mit_r1
+	.global div_r0_durch_r1
 
+/************************************************************************/
+/*  function: mult_r0_mit_r1											*/
+/*	description:  muliply two numbers, number1 in R0, number2 in R1 	*/
+/************************************************************************/
+/*	input: 	R0: factor one												*/
+/*			R1: factor two												*/
+/*	output:	R0: result from multiplication								*/
+/*	helper: R1, may to be saved											*/
+/************************************************************************/
 mult_r0_mit_r1:
-/************************************************************************/
-/*  	function: mult_r0_mit_r1					*/
-/*	description:  muliply two numbers, number1 in R0, number2 in R1 */
-/************************************************************************/
-/*	input: 	R0: factor one						*/
-/*		R1: factor two						*/
-/*	output:	R0: result from multiplication				*/
-/*	helper: R1, may to be saved					*/
-/************************************************************************/
 	MOV R2,R0
 	SUB R1,#1
 loop:
@@ -30,22 +30,18 @@ loop:
 	MOV PC,LR
 
 
-
-
-	.global div_r0_durch_r1
+/********************************************/
+/*  function: div_r0_durch_r1				*/
+/*	description:  Divid R0 by R1			*/
+/********************************************/
+/*	input: 	R0: Dividend					*/
+/*			R1: Divisor 					*/
+/*	output:	R0: result from divion			*/
+/*	helper: R2,R3,R4,R5 may to be saved		*/
+/********************************************/
 
 div_r0_durch_r1:
-/************************************************************************/
-/*  	function: div_r0_durch_r1					*/
-/*	description:  Divid R0 by R1					*/
-/************************************************************************/
-/*	input: 	R0: Dividend						*/
-/*		R1: Divisor 						*/
-/*	output:	R0: result from divion					*/
-/*	helper: R2,R3,R4,R5 may to be saved				*/
-/************************************************************************/
-
-	/*INIT*/
+	@init registers
 	MOV R2,#0
 	MOV R3,R0
 	MOV R4,#0
@@ -55,16 +51,16 @@ div_r0_durch_r1:
 	BLT _finish
 	B kuerzenFirst
 kuerzen:
-	ADD R2, R2, #1	@ verschiebung erhöhen
+	ADD R2, R2, #1		@ verschiebung erhöhen
 kuerzenFirst:
-	MOV R3, R0, LSR R2 @R0 um R2 Stellen kürzen -> in R3
+	MOV R3, R0, LSR R2 	@R0 um R2 Stellen kürzen -> in R3
 	CMP R3, R1
 	BGE kuerzen
-	SUB R2,R2, #1	@Anzahl abgeschnittene und damit nachher zu holende stellen
+	SUB R2,R2, #1		@Anzahl abgeschnittene und damit nachher zu holende stellen
 	
 	MOV R3, R0, LSR R2	@erste Teildividend
 shift: 
-	MOV R4,R4, LSL #1 @vor jedem Durchlauf Ergebnisregister R4 um 1 Stellen nach links schieben 
+	MOV R4,R4, LSL #1 	@vor jedem Durchlauf Ergebnisregister R4 um 1 Stellen nach links schieben 
 
 	CMP R3,R1 
 	BLT shiftsub
