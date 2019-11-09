@@ -43,7 +43,7 @@ _retrun:
 
 Addition:
 ```assembly
-/*  Target   1.Number
+/*  Result   1.Number
         \    |     _ 2.Number
          |   |    |    */
     ADD R0, #20, #10    @ Result: 30
@@ -52,14 +52,22 @@ Addition:
 
 Subtraction:
 ```assembly
-/*  Target   Minuend
+/*  Result   Minuend
         \    |     _ Subtrahend
          |   |    |    */
     SUB R0, #20, #10    @ Result: 10
     SUB R0, R0, R1
 
     @ Works with branches, like BGE,...
+    @ the result is the input for the comparison
     @ For more Informations look in Branch section
     SUBS R0, R0, R1
 ```
 
+
+### Branch jumps:
+
+```assembly
+
+
+```
