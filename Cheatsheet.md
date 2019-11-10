@@ -12,3 +12,14 @@
 
 
 ```
+
+
+
+### Compiling
+```shell
+as -g -o compilation.o sourcecode.s
+
+ld    -o executable   compilation.o
+
+gcc -g –o executable sourcecode.s
+```

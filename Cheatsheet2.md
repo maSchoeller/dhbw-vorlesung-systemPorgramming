@@ -4,7 +4,13 @@
 
 ### Template Main programm:
 
+Note: for 'gcc' Compiling "main" is the starting point and required.
+
+Note: for 'as' Compiling "_start" is the starting point, it's otpional but convention and needed if you declare a subfunction at the beginning of the file.
 ```assembly
+    .global _start
+_start: B main
+
     .global main
 main:
 
@@ -70,4 +76,20 @@ Subtraction:
 ```assembly
 
 
+```
+
+
+### Compiling:
+Two Options for compiling, via 'as'(Assembler Compiler) or 'gcc'(c++ Compiler)
+
+Note: Assembler Compiler files needs to be Linked for an executable, gcc does this automatically
+```shell
+    Compiling with options for debugging (Optional)
+    |  Name of the output file, convention: .o
+    |  |               Input file/files, each additional argument
+    |  |               |
+as -g -o compilation.o sourcecode.s
+ld    -o executable   compilation.o
+
+gcc -g –o executable sourcecode.s
 ```
