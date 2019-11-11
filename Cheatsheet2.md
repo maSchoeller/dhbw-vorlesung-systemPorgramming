@@ -40,11 +40,13 @@ _retrun:
 
 
 Registers:
-|||||||
-|-|-|-|-|-|-|
-|R0|R1|R2|R3|R4|R5|
-|R6|R7|R8|R9|R10|R11|
-|R12|R13|R15|PC|LR|-|
+
+|  a  |  b  |  c  |  d  |  e  |  f  |
+| --- | --- | --- | --- | --- | --- |
+| R0  | R1  | R2  |  R3 | R4  | R5  |
+| R6  | R7  | R8  |  R9 | R10 | R11 |
+| R12 | R13 | R15 |  PC | LR  | --- |
+
 Note: SP(Stackpointer) special Register, saves the current Adresse of the Stack. 4 possible kinds of stackpointer working. 
 * Full Ascending (FA)
     - stackpointer points to a written address and rises.
