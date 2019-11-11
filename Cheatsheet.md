@@ -9,8 +9,6 @@
 
     @Number greater than 255
     LDR R0,=1000    
-
-
 ```
 
 
