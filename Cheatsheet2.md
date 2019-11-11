@@ -38,6 +38,23 @@ _retrun:
 
 ### Register working:
 
+
+Registers:
+|||||||
+|-|-|-|-|-|-|
+|R0|R1|R2|R3|R4|R5|
+|R6|R7|R8|R9|R10|R11|
+|R12|R13|R15|PC|LR|-|
+Note: SP(Stackpointer) special Register, saves the current Adresse of the Stack. 4 possible kinds of stackpointer working. 
+* Full Ascending (FA)
+    - stackpointer points to a written address and rises.
+* Empty Ascending (EA)
+    - stackpointer points to a empty address and rises.
+* Empty Descending (ED)
+    - stackpointer points to a written address and sinks.
+* Full Descending (FD, Default)
+    - stackpointer points to a empty address and sinks.
+
 ```assembly
     MOV R0, R1
     MOV R0, #255     @can only assign 8 bits = 255
@@ -88,8 +105,10 @@ Note: Assembler Compiler files needs to be Linked for an executable, gcc does th
     |  Name of the output file, convention: .o
     |  |               Input file/files, each additional argument
     |  |               |
-as -g -o compilation.o sourcecode.s
+as -g -o compilation.o sourcecode.s sourcecode2.s
 ld    -o executable   compilation.o
 
-gcc -g –o executable sourcecode.s
+gcc -g –o executable sourcecode.s sourcecode2.s
 ```
+
+### Data and lib-calls
