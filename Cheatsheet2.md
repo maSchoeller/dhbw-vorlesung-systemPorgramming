@@ -26,7 +26,7 @@ _exit:
 ```assembly
     .global _func
 _func:
-    push {SP}
+    push {LR}
 
     @insert code
 
